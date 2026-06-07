@@ -136,5 +136,86 @@ async def build_indexes() -> None:
     print("Both Moss indexes created. Knowledge (RAG) and memory are ready for use.")
 
 
+def load_firm_documents(jsonl_path: Path) -> list[DocumentInfo]:
+    """Load moss_index_documents.jsonl into DocumentInfo entries."""
+    docs: list[DocumentInfo] = []
+    with jsonl_path.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            entry = json.loads(line)
+            metadata = entry.get("metadata", {})
+            flat_meta = {}
+            for k, v in metadata.items():
+                flat_meta[str(k)] = json.dumps(v) if isinstance(v, (list, dict)) else str(v)
+            flat_meta["firm"] = str(entry.get("firm", ""))
+            flat_meta["type"] = str(entry.get("type", ""))
+            flat_meta["title"] = str(entry.get("title", ""))
+            docs.append(DocumentInfo(
+                id=str(entry["id"]),
+                text=str(entry["text"]),
+                metadata=flat_meta,
+            ))
+    return docs
+
+
+async def build_caserouter_indexes(
+    client: MossClient,
+    all_docs: list[DocumentInfo],
+    firm_ids: list[str],
+    model_id: str = DEFAULT_MODEL_ID,
+) -> None:
+    """Create per-firm indexes, a combined all-firms index, and a call-memory seed."""
+    for firm_id in firm_ids:
+        firm_docs = [d for d in all_docs if d.metadata.get("firm", "").replace(" ", "_") == firm_id
+                     or d.metadata.get("firm", "").replace("_", " ") in firm_id.replace("_", " ")]
+        if not firm_docs:
+            firm_docs = [d for d in all_docs if firm_id.split("_")[0].lower() in d.metadata.get("firm", "").lower()]
+        index_name = f"firm-{firm_id.lower().replace(' ', '-')}"
+        print(f"Creating per-firm index '{index_name}' with {len(firm_docs)} docs...")
+        result = await client.create_index(index_name, firm_docs, model_id)
+        print(f"  done (job: {result.job_id}, docs: {result.doc_count})")
+
+    print(f"Creating combined 'all-firms' index with {len(all_docs)} docs...")
+    result = await client.create_index("all-firms", all_docs, model_id)
+    print(f"  done (job: {result.job_id}, docs: {result.doc_count})")
+
+    seed = [DocumentInfo(
+        id="__seed__",
+        text="(seed) placeholder for call memory index",
+        metadata={"call_id": "__seed__"},
+    )]
+    print("Creating call-memory seed index...")
+    result = await client.create_index("call-memory", seed, model_id)
+    print(f"  done (job: {result.job_id})")
+
+
+async def _build_caserouter_main() -> None:
+    """Entry point: load firm docs and build per-firm + all-firms + call-memory indexes."""
+    project_id = os.getenv("MOSS_PROJECT_ID")
+    project_key = os.getenv("MOSS_PROJECT_KEY")
+    if not project_id or not project_key:
+        raise OSError(
+            "Missing required Moss environment variables: MOSS_PROJECT_ID, MOSS_PROJECT_KEY. "
+            f"Set them in {ENV_PATH} before running this script."
+        )
+
+    jsonl_path = AGENT_DIR / "data" / "firms" / "moss_index_documents.jsonl"
+    firms_json = AGENT_DIR / "data" / "firms" / "auto_network_firms.json"
+
+    all_docs = load_firm_documents(jsonl_path)
+    print(f"Loaded {len(all_docs)} firm documents from {jsonl_path}")
+
+    with firms_json.open("r", encoding="utf-8") as f:
+        firms = json.load(f)
+    firm_ids = [f["firm_id"] for f in firms]
+    print(f"Found {len(firm_ids)} firms: {', '.join(firm_ids)}")
+
+    client = MossClient(project_id, project_key)
+    await build_caserouter_indexes(client, all_docs, firm_ids)
+    print("CaseRouter Moss indexes built.")
+
+
 if __name__ == "__main__":
-    asyncio.run(build_indexes())
+    asyncio.run(_build_caserouter_main())

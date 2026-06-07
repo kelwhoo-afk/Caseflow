@@ -1,0 +1,513 @@
+[
+  {
+    "packet_id": "ddb47e8b-d9c7-4a74-86d5-f7f9f5c5f29b",
+    "created_at": "2026-06-07T13:10:19.853467+00:00",
+    "call_duration_seconds": 0,
+    "firm_id": "BayBridge_Auto_Injury",
+    "caller": {
+      "full_name": "Maria Garcia",
+      "phone": "+15105551234",
+      "dob": null,
+      "email": null,
+      "relation_to_victim": "self",
+      "victim_full_name": null,
+      "consent_to_contact": false,
+      "consent_to_record": false
+    },
+    "accident": {
+      "type": "car",
+      "victim_role": null,
+      "date": "2026-05-29",
+      "time": null,
+      "location": {
+        "description": null,
+        "city": "Oakland",
+        "state": "CA"
+      },
+      "description": "Rear-ended on I-880 in Oakland",
+      "other_party": {
+        "description": null,
+        "is_commercial": null,
+        "company_name": null
+      },
+      "vehicles": {
+        "count": null,
+        "commercial_vehicle_involved": null,
+        "hit_and_run": null,
+        "other_driver_uninsured": null
+      }
+    },
+    "injuries": {
+      "status": "in_treatment",
+      "description": "Neck pain",
+      "passengers_injured": true,
+      "passenger_details": null
+    },
+    "medical": {
+      "facility_name": "Highland Hospital",
+      "ambulance_used": false,
+      "treatment_ongoing": null
+    },
+    "legal": {
+      "already_has_attorney": null,
+      "police_report_filed": "Yes",
+      "police_report_number": "BB-2026-04472",
+      "adjuster_contacted_caller": null,
+      "gave_recorded_statement": null,
+      "report_number": "BB-2026-04472",
+      "citing_officer": "Sgt. Rivera, M.",
+      "badge_number": "21847",
+      "incident_date": "06/03/2026",
+      "location": "Eastbound I-80 Bay Bridge approach San Francisco CA",
+      "at_fault_driver": "Daniel Whitaker",
+      "citation_code": "CVC 22350 — Unsafe Speed for Conditions",
+      "narrative": "Narrative: On 06/03/2026 at approximately 21:18 dispatch received a 911 call reporting a two-vehicle\nhours,\ncollision in the eastbound lanes of I-80 approaching the Bay Upon arrival at Rivera observed\nBridge. 21:31, Sgt.\nParty 1's 2021 Toyota Camry stopped in the #3 lane with moderate rear-end Party 2's 2023 Ford F-150\ndamage.\nwas stopped approximately 40 feet behind with moderate front-end damage and a deployed driver-side\nairbag.\nParty 1 (Garcia) reported that traffic ahead had slowed for construction She had come to a complete\nsignage.\nstop when she was struck from Party 1 reported neck and shoulder pain at the scene and declined\nbehind.\nambulance transport but stated she would seek medical Party 2 (Whitaker) admitted to looking down\nevaluation.\nat his phone immediately prior to impact and stated he 'didn't see the traffic Whitaker was issued a\nstopping.'\ncitation under CVC\n22350.\nBoth vehicles were drivable but towed at the request of the involved Photographs of the vehicle\nparties. scene,\nand final rest positions were captured by Officer Badge No third-party witnesses came\ndamage, Tanaka, 31092.\nforward at the\nscene.\nINJURIES\nParty 1 (Garcia): Reported neck upper back Refused on-scene Advised to seek\npain, stiffness. transport.\nsame-day urgent care\nevaluation.\nParty 2 (Whitaker): No reported Airbag deployment\ninjury. noted.\nI certify under penalty of perjury under the laws of the State of California that the foregoing is true and\ncorrect. Sgt. M. Rivera,\nBadge 21847 CHP Bay Bridge Division 06/03/2026\n· ·"
+    },
+    "evidence": {
+      "insurance_carrier": null,
+      "insurance_policy_number": null,
+      "insurance_card_image_url": null,
+      "photo_urls": [],
+      "photo_upload_link_sent": false
+    },
+    "routing": {
+      "subtype": "rear_end_clear_liability",
+      "priority": "high",
+      "assigned_firm": null,
+      "decline_reason": null,
+      "missing_required_fields": [],
+      "follow_up_tasks": [],
+      "retrieved_rules": []
+    },
+    "transcript_summary": null,
+    "transcript": [],
+    "truefoundry_audit": null,
+    "triage": {
+      "path": "review",
+      "firm_id": "BayBridge Auto Injury",
+      "priority": "high",
+      "reason": "Bay Area rear-end with ER visit and minor in vehicle. Strong fit for BayBridge.",
+      "moss_scores": [
+        {
+          "firm": "BayBridge Auto Injury",
+          "score": 0.94
+        }
+      ]
+    },
+    "status": "new"
+  },
+  {
+    "packet_id": "d899085c-5cfb-4638-92cc-6bfa042a2cfd",
+    "created_at": "2026-06-07T13:10:19.853658+00:00",
+    "call_duration_seconds": 0,
+    "firm_id": "BayBridge_Auto_Injury",
+    "caller": {
+      "full_name": "James Thompson",
+      "phone": "+14085559876",
+      "dob": null,
+      "email": null,
+      "relation_to_victim": "self",
+      "victim_full_name": null,
+      "consent_to_contact": true,
+      "consent_to_record": false
+    },
+    "accident": {
+      "type": "truck",
+      "victim_role": null,
+      "date": "2026-06-01",
+      "time": null,
+      "location": {
+        "description": null,
+        "city": "San Jose",
+        "state": null
+      },
+      "description": "FedEx delivery van hit me in San Jose, went to ER",
+      "other_party": {
+        "description": null,
+        "is_commercial": true,
+        "company_name": "FedEx"
+      },
+      "vehicles": {
+        "count": null,
+        "commercial_vehicle_involved": null,
+        "hit_and_run": null,
+        "other_driver_uninsured": null
+      }
+    },
+    "injuries": {
+      "status": "hospitalized",
+      "description": null,
+      "passengers_injured": null,
+      "passenger_details": null
+    },
+    "medical": {
+      "facility_name": null,
+      "ambulance_used": null,
+      "treatment_ongoing": null
+    },
+    "legal": {
+      "already_has_attorney": null,
+      "police_report_filed": "unknown",
+      "police_report_number": null,
+      "adjuster_contacted_caller": null,
+      "gave_recorded_statement": null
+    },
+    "evidence": {
+      "insurance_carrier": null,
+      "insurance_policy_number": null,
+      "insurance_card_image_url": null,
+      "photo_urls": [],
+      "photo_upload_link_sent": false
+    },
+    "routing": {
+      "subtype": null,
+      "priority": "high",
+      "assigned_firm": "Summit Commercial Auto",
+      "decline_reason": null,
+      "missing_required_fields": [],
+      "follow_up_tasks": [],
+      "retrieved_rules": []
+    },
+    "transcript_summary": null,
+    "transcript": [],
+    "truefoundry_audit": null,
+    "triage": {
+      "path": "referral",
+      "firm_id": "Summit Commercial Auto",
+      "priority": "high",
+      "reason": "Commercial vehicle + ER. Best fit for Summit.",
+      "moss_scores": [
+        {
+          "firm": "Summit Commercial Auto",
+          "score": 0.92
+        },
+        {
+          "firm": "BayBridge Auto Injury",
+          "score": 0.65
+        }
+      ]
+    },
+    "status": "placing"
+  },
+  {
+    "packet_id": "360cb00f-789a-44e0-b83c-4617ae13ec7f",
+    "created_at": "2026-06-07T13:10:19.853675+00:00",
+    "call_duration_seconds": 0,
+    "firm_id": "BayBridge_Auto_Injury",
+    "caller": {
+      "full_name": "Tom Wilson",
+      "phone": "+15105553333",
+      "dob": null,
+      "email": null,
+      "relation_to_victim": "self",
+      "victim_full_name": null,
+      "consent_to_contact": false,
+      "consent_to_record": false
+    },
+    "accident": {
+      "type": "car",
+      "victim_role": null,
+      "date": null,
+      "time": null,
+      "location": {
+        "description": null,
+        "city": null,
+        "state": null
+      },
+      "description": "Someone scratched my parked car",
+      "other_party": {
+        "description": null,
+        "is_commercial": null,
+        "company_name": null
+      },
+      "vehicles": {
+        "count": null,
+        "commercial_vehicle_involved": null,
+        "hit_and_run": null,
+        "other_driver_uninsured": null
+      }
+    },
+    "injuries": {
+      "status": "unknown",
+      "description": null,
+      "passengers_injured": null,
+      "passenger_details": null
+    },
+    "medical": {
+      "facility_name": null,
+      "ambulance_used": null,
+      "treatment_ongoing": null
+    },
+    "legal": {
+      "already_has_attorney": null,
+      "police_report_filed": "unknown",
+      "police_report_number": null,
+      "adjuster_contacted_caller": null,
+      "gave_recorded_statement": null
+    },
+    "evidence": {
+      "insurance_carrier": null,
+      "insurance_policy_number": null,
+      "insurance_card_image_url": null,
+      "photo_urls": [],
+      "photo_upload_link_sent": false
+    },
+    "routing": {
+      "subtype": null,
+      "priority": "declined",
+      "assigned_firm": null,
+      "decline_reason": "property_damage_only",
+      "missing_required_fields": [],
+      "follow_up_tasks": [],
+      "retrieved_rules": []
+    },
+    "transcript_summary": null,
+    "transcript": [],
+    "truefoundry_audit": null,
+    "triage": {
+      "path": "decline",
+      "firm_id": null,
+      "priority": "declined",
+      "reason": "No injury reported. Property damage only.",
+      "moss_scores": []
+    },
+    "status": "declined"
+  },
+  {
+    "packet_id": "fcd93738-2f24-4908-8505-1fe3b5907a56",
+    "created_at": "2026-06-07T14:47:58.836817+00:00",
+    "call_duration_seconds": 0,
+    "firm_id": "BayBridge_Auto_Injury",
+    "caller": {
+      "full_name": null,
+      "phone": null,
+      "dob": null,
+      "email": null,
+      "relation_to_victim": null,
+      "victim_full_name": null,
+      "consent_to_contact": false,
+      "consent_to_record": false
+    },
+    "accident": {
+      "type": null,
+      "victim_role": null,
+      "date": null,
+      "time": null,
+      "location": {
+        "description": null,
+        "city": null,
+        "state": null
+      },
+      "description": null,
+      "other_party": {
+        "description": null,
+        "is_commercial": null,
+        "company_name": null
+      },
+      "vehicles": {
+        "count": null,
+        "commercial_vehicle_involved": null,
+        "hit_and_run": null,
+        "other_driver_uninsured": null
+      }
+    },
+    "injuries": {
+      "status": "unknown",
+      "description": null,
+      "passengers_injured": null,
+      "passenger_details": null
+    },
+    "medical": {
+      "facility_name": null,
+      "ambulance_used": null,
+      "treatment_ongoing": null
+    },
+    "legal": {
+      "already_has_attorney": null,
+      "police_report_filed": "unknown",
+      "police_report_number": null,
+      "adjuster_contacted_caller": null,
+      "gave_recorded_statement": null
+    },
+    "evidence": {
+      "insurance_carrier": null,
+      "insurance_policy_number": null,
+      "insurance_card_image_url": null,
+      "photo_urls": [],
+      "photo_upload_link_sent": false
+    },
+    "routing": {
+      "subtype": null,
+      "priority": "normal",
+      "assigned_firm": null,
+      "decline_reason": null,
+      "missing_required_fields": [],
+      "follow_up_tasks": [],
+      "retrieved_rules": []
+    },
+    "transcript_summary": null,
+    "transcript": [],
+    "truefoundry_audit": null
+  },
+  {
+    "packet_id": "95553c1d-7a7b-43d2-80ca-7f453271d13c",
+    "created_at": "2026-06-07T16:51:50.800132+00:00",
+    "call_duration_seconds": 0,
+    "firm_id": "demo_firm",
+    "caller": {
+      "full_name": null,
+      "phone": null,
+      "dob": null,
+      "email": null,
+      "relation_to_victim": null,
+      "victim_full_name": null,
+      "consent_to_contact": false,
+      "consent_to_record": false
+    },
+    "accident": {
+      "type": null,
+      "victim_role": null,
+      "date": null,
+      "time": null,
+      "location": {
+        "description": null,
+        "city": null,
+        "state": null
+      },
+      "description": null,
+      "other_party": {
+        "description": null,
+        "is_commercial": null,
+        "company_name": null
+      },
+      "vehicles": {
+        "count": null,
+        "commercial_vehicle_involved": null,
+        "hit_and_run": null,
+        "other_driver_uninsured": null
+      }
+    },
+    "injuries": {
+      "status": "unknown",
+      "description": null,
+      "passengers_injured": null,
+      "passenger_details": null
+    },
+    "medical": {
+      "facility_name": null,
+      "ambulance_used": null,
+      "treatment_ongoing": null
+    },
+    "legal": {
+      "already_has_attorney": null,
+      "police_report_filed": "unknown",
+      "police_report_number": null,
+      "adjuster_contacted_caller": null,
+      "gave_recorded_statement": null
+    },
+    "evidence": {
+      "insurance_carrier": null,
+      "insurance_policy_number": null,
+      "insurance_card_image_url": null,
+      "photo_urls": [],
+      "photo_upload_link_sent": false
+    },
+    "routing": {
+      "subtype": null,
+      "priority": "normal",
+      "assigned_firm": null,
+      "decline_reason": null,
+      "missing_required_fields": [],
+      "follow_up_tasks": [],
+      "retrieved_rules": []
+    },
+    "transcript_summary": null,
+    "transcript": [],
+    "truefoundry_audit": null
+  },
+  {
+    "packet_id": "e4e1f1aa-e1c6-413f-b130-9df97e6b08d4",
+    "created_at": "2026-06-07T17:19:11.370445+00:00",
+    "call_duration_seconds": 0,
+    "firm_id": "demo_firm",
+    "caller": {
+      "full_name": "Arjun Chidambaram",
+      "phone": "669-264-0451",
+      "dob": null,
+      "email": null,
+      "relation_to_victim": "Self",
+      "victim_full_name": null,
+      "consent_to_contact": false,
+      "consent_to_record": false,
+      "phone_number": "669-264-0451",
+      "relationship_to_victim": "Self",
+      "has_auto_insurance": "No current auto insurance",
+      "preferred_contact_date": "Wednesday, June 10, 2026"
+    },
+    "accident": {
+      "type": "Rear-end motor vehicle collision",
+      "victim_role": null,
+      "date": "June 6, 2026",
+      "time": null,
+      "location": "Near Oakland",
+      "description": "Caller slowed and indicated right due to an ambulance with lights and siren; another vehicle approached too fast from behind and rear-ended caller's vehicle, causing back injury.",
+      "other_party": {
+        "description": null,
+        "is_commercial": null,
+        "company_name": null
+      },
+      "vehicles": {
+        "count": null,
+        "commercial_vehicle_involved": null,
+        "hit_and_run": null,
+        "other_driver_uninsured": null
+      },
+      "other_driver_accepted_fault": "Yes - 100% at fault",
+      "property_damage": "Large dent to rear bumper",
+      "police_report": "Yes - report filed and information exchanged",
+      "passengers": "No passengers; no minors involved",
+      "other_driver_insurance": "AAA - caller has spoken with them",
+      "recorded_statement_to_insurer": "Yes - AAA; no documents signed"
+    },
+    "injuries": {
+      "status": "unknown",
+      "description": "Back injury; currently hospitalized",
+      "passengers_injured": null,
+      "passenger_details": null,
+      "severity_notes": "Caller reports great distress at time of intake",
+      "diagnosis": "Herniated disc and fracture"
+    },
+    "medical": {
+      "facility_name": null,
+      "ambulance_used": null,
+      "treatment_ongoing": null,
+      "transport": "Ambulance to hospital"
+    },
+    "legal": {
+      "already_has_attorney": null,
+      "police_report_filed": "unknown",
+      "police_report_number": null,
+      "adjuster_contacted_caller": null,
+      "gave_recorded_statement": null
+    },
+    "evidence": {
+      "insurance_carrier": null,
+      "insurance_policy_number": null,
+      "insurance_card_image_url": null,
+      "photo_urls": [],
+      "photo_upload_link_sent": false
+    },
+    "routing": {
+      "subtype": null,
+      "priority": "normal",
+      "assigned_firm": null,
+      "decline_reason": null,
+      "missing_required_fields": [],
+      "follow_up_tasks": [],
+      "retrieved_rules": []
+    },
+    "transcript_summary": null,
+    "transcript": [],
+    "truefoundry_audit": null
+  }
+]

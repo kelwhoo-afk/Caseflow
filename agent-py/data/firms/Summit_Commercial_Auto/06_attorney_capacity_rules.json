@@ -1,0 +1,34 @@
+{
+  "firm_name": "Summit Commercial Auto",
+  "capacity_today": {
+    "consult_slots_today": 1,
+    "urgent_slots_today": 1,
+    "max_new_reviews_per_day": 3
+  },
+  "attorneys": [
+    {
+      "name": "Maya Patel",
+      "focus": "commercial vehicle and severe injury",
+      "slots_today": [
+        "5:00 PM urgent"
+      ]
+    },
+    {
+      "name": "Jordan Price",
+      "focus": "catastrophic injury review",
+      "slots_today": []
+    }
+  ],
+  "capacity_rules": [
+    "Accepted consult booking reduces consult_slots_today by 1.",
+    "Auto-referral does not reduce receiving firm capacity until receiving firm accepts or books consult.",
+    "Decline/resource path uses no attorney capacity.",
+    "Urgent slots are reserved for severe injury, commercial vehicle with ER/hospital, minor injury, or catastrophic indicators."
+  ],
+  "demo_statuses": [
+    "available",
+    "urgent_only",
+    "full",
+    "out_of_office"
+  ]
+}

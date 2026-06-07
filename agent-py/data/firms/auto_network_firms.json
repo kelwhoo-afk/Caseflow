@@ -1,0 +1,263 @@
+[
+  {
+    "firm_id": "BayBridge_Auto_Injury",
+    "firm_name": "BayBridge Auto Injury",
+    "role": "General Bay Area auto-injury firm",
+    "coverage": [
+      "Alameda",
+      "San Francisco",
+      "San Mateo",
+      "Santa Clara",
+      "Contra Costa"
+    ],
+    "best_fit": [
+      "Bay Area rear-end collisions with injury",
+      "simple two-car crashes with mostly clear liability",
+      "Bay Area Uber/Lyft passenger injuries with moderate injury",
+      "neck/back pain cases where caller has or plans medical treatment"
+    ],
+    "strong_fit_subtypes": [
+      "rear_end_clear_liability",
+      "simple_two_car",
+      "bay_area_rideshare"
+    ],
+    "refer_to_network_when": [
+      {
+        "trigger": "commercial vehicle plus ER/hospital/severe injury",
+        "refer_to": "Summit Commercial Auto"
+      },
+      {
+        "trigger": "multi-car disputed fault or everyone blaming each other",
+        "refer_to": "Pacific Complex Collision"
+      },
+      {
+        "trigger": "hit-and-run or uninsured/underinsured complexity",
+        "refer_to": "Pacific Complex Collision"
+      },
+      {
+        "trigger": "Southern California accident or Spanish-speaking SoCal caller",
+        "refer_to": "Vista Auto Justice"
+      },
+      {
+        "trigger": "no injury / property damage only",
+        "refer_to": "Decline/resource path"
+      }
+    ],
+    "capacity_today": {
+      "consult_slots_today": 3,
+      "urgent_slots_today": 1,
+      "max_new_reviews_per_day": 6
+    },
+    "attorneys": [
+      {
+        "name": "Sarah Kim",
+        "focus": "rear-end and simple auto injury",
+        "slots_today": [
+          "3:00 PM",
+          "4:30 PM"
+        ]
+      },
+      {
+        "name": "David Lee",
+        "focus": "rideshare and moderate injury",
+        "slots_today": [
+          "2:00 PM"
+        ]
+      }
+    ]
+  },
+  {
+    "firm_id": "Summit_Commercial_Auto",
+    "firm_name": "Summit Commercial Auto",
+    "role": "Commercial vehicle and severe-injury auto specialist",
+    "coverage": [
+      "California statewide"
+    ],
+    "best_fit": [
+      "delivery van, company vehicle, work truck, fleet vehicle accidents",
+      "ER, hospitalization, surgery, fracture, brain/spine injury, or death",
+      "commercial insurer or employer representative contacted caller",
+      "high-severity auto cases even if not fully investigated yet"
+    ],
+    "strong_fit_subtypes": [
+      "commercial_vehicle",
+      "commercial_vehicle_severe",
+      "catastrophic_auto",
+      "wrongful_death_auto"
+    ],
+    "refer_to_network_when": [
+      {
+        "trigger": "simple Bay Area rear-end with moderate injury",
+        "refer_to": "BayBridge Auto Injury"
+      },
+      {
+        "trigger": "multi-car dispute without commercial or severe injury",
+        "refer_to": "Pacific Complex Collision"
+      },
+      {
+        "trigger": "hit-and-run or uninsured issue without commercial defendant",
+        "refer_to": "Pacific Complex Collision"
+      },
+      {
+        "trigger": "Southern California standard/moderate auto case",
+        "refer_to": "Vista Auto Justice"
+      },
+      {
+        "trigger": "no injury / property damage only",
+        "refer_to": "Decline/resource path"
+      }
+    ],
+    "capacity_today": {
+      "consult_slots_today": 1,
+      "urgent_slots_today": 1,
+      "max_new_reviews_per_day": 3
+    },
+    "attorneys": [
+      {
+        "name": "Maya Patel",
+        "focus": "commercial vehicle and severe injury",
+        "slots_today": [
+          "5:00 PM urgent"
+        ]
+      },
+      {
+        "name": "Jordan Price",
+        "focus": "catastrophic injury review",
+        "slots_today": []
+      }
+    ]
+  },
+  {
+    "firm_id": "Pacific_Complex_Collision",
+    "firm_name": "Pacific Complex Collision",
+    "role": "Complex liability and insurance-dispute auto firm",
+    "coverage": [
+      "California statewide",
+      "Bay Area",
+      "Sacramento"
+    ],
+    "best_fit": [
+      "multi-car accidents, pileups, chain reactions",
+      "unclear fault or caller being blamed",
+      "hit-and-run, uninsured/underinsured driver issues",
+      "rideshare coverage disputes or multiple insurance carriers"
+    ],
+    "strong_fit_subtypes": [
+      "multi_car_disputed",
+      "hit_and_run_uninsured",
+      "coverage_dispute",
+      "disputed_liability"
+    ],
+    "refer_to_network_when": [
+      {
+        "trigger": "simple clear-liability Bay Area rear-end",
+        "refer_to": "BayBridge Auto Injury"
+      },
+      {
+        "trigger": "commercial vehicle with severe injury",
+        "refer_to": "Summit Commercial Auto"
+      },
+      {
+        "trigger": "Southern California standard auto case",
+        "refer_to": "Vista Auto Justice"
+      },
+      {
+        "trigger": "Spanish-speaking Southern California caller",
+        "refer_to": "Vista Auto Justice"
+      },
+      {
+        "trigger": "no injury / property damage only",
+        "refer_to": "Decline/resource path"
+      }
+    ],
+    "capacity_today": {
+      "consult_slots_today": 2,
+      "urgent_slots_today": 0,
+      "max_new_reviews_per_day": 5
+    },
+    "attorneys": [
+      {
+        "name": "Elena Torres",
+        "focus": "hit-and-run and uninsured motorist",
+        "slots_today": [
+          "1:30 PM"
+        ]
+      },
+      {
+        "name": "Nathan Brooks",
+        "focus": "multi-car liability disputes",
+        "slots_today": [
+          "4:00 PM"
+        ]
+      }
+    ]
+  },
+  {
+    "firm_id": "Vista_Auto_Justice",
+    "firm_name": "Vista Auto Justice",
+    "role": "Southern California auto-injury firm with bilingual intake",
+    "coverage": [
+      "Los Angeles",
+      "Orange",
+      "Riverside",
+      "San Bernardino",
+      "San Diego"
+    ],
+    "best_fit": [
+      "Southern California rear-end or simple auto accidents with injury",
+      "Spanish-speaking callers or bilingual intake needed",
+      "Southern California Uber/Lyft injuries",
+      "moderate commercial-vehicle accidents that are not catastrophic"
+    ],
+    "strong_fit_subtypes": [
+      "southern_california_auto",
+      "southern_california_rideshare",
+      "spanish_speaking_auto"
+    ],
+    "refer_to_network_when": [
+      {
+        "trigger": "severe commercial or catastrophic injury",
+        "refer_to": "Summit Commercial Auto"
+      },
+      {
+        "trigger": "complex uninsured, hit-and-run, or disputed liability",
+        "refer_to": "Pacific Complex Collision"
+      },
+      {
+        "trigger": "Bay Area clear-liability case",
+        "refer_to": "BayBridge Auto Injury"
+      },
+      {
+        "trigger": "Bay Area disputed liability",
+        "refer_to": "Pacific Complex Collision"
+      },
+      {
+        "trigger": "no injury / property damage only",
+        "refer_to": "Decline/resource path"
+      }
+    ],
+    "capacity_today": {
+      "consult_slots_today": 4,
+      "urgent_slots_today": 1,
+      "max_new_reviews_per_day": 8
+    },
+    "attorneys": [
+      {
+        "name": "Camila Rivera",
+        "focus": "Spanish-speaking auto injury intake",
+        "slots_today": [
+          "12:30 PM",
+          "3:30 PM"
+        ]
+      },
+      {
+        "name": "Anthony Nguyen",
+        "focus": "SoCal rideshare and moderate injury",
+        "slots_today": [
+          "2:30 PM",
+          "5:30 PM"
+        ]
+      }
+    ]
+  }
+]

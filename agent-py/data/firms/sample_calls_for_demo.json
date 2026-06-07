@@ -1,0 +1,65 @@
+[
+  {
+    "id": "baybridge_rear_end_oakland",
+    "transcript": "I was rear-ended in Oakland last Thursday. My 8-year-old was in the car. My neck hurts. The other driver's insurance keeps calling me. Do I have a case?",
+    "expected_path": "needs_attorney_review",
+    "recommended_firm": "BayBridge Auto Injury",
+    "retrieval_targets": [
+      "rear-end playbook",
+      "Bay Area coverage rule",
+      "minor escalation rule",
+      "insurance-contact safe script",
+      "no-legal-advice boundary",
+      "BayBridge firm criteria"
+    ]
+  },
+  {
+    "id": "summit_fedex_er",
+    "transcript": "A FedEx delivery van hit me in San Jose and I went to the ER. The company insurance already called.",
+    "expected_path": "referral_pending_client_consent",
+    "recommended_firm": "Summit Commercial Auto",
+    "retrieval_targets": [
+      "commercial vehicle playbook",
+      "ER escalation rule",
+      "Summit firm criteria",
+      "referral consent policy",
+      "confidentiality rule"
+    ]
+  },
+  {
+    "id": "pacific_multi_car_dispute",
+    "transcript": "Three cars were involved and everyone is blaming each other. I am injured and do not know whose insurance to call.",
+    "expected_path": "referral_pending_client_consent",
+    "recommended_firm": "Pacific Complex Collision",
+    "retrieval_targets": [
+      "multi-car playbook",
+      "disputed liability rule",
+      "insurance complexity rule",
+      "Pacific firm criteria",
+      "referral consent policy"
+    ]
+  },
+  {
+    "id": "vista_spanish_la",
+    "transcript": "Me chocaron en Los Angeles. Tengo dolor en la espalda. Necesito hablar con alguien en espanol.",
+    "expected_path": "referral_pending_client_consent",
+    "recommended_firm": "Vista Auto Justice",
+    "retrieval_targets": [
+      "Southern California coverage",
+      "Spanish-speaking intake criteria",
+      "Vista firm criteria",
+      "referral consent policy"
+    ]
+  },
+  {
+    "id": "decline_property_damage",
+    "transcript": "Someone scratched my parked car. No one was hurt. I just want them to pay for the damage.",
+    "expected_path": "decline_resource",
+    "recommended_firm": null,
+    "retrieval_targets": [
+      "property-damage-only decline rule",
+      "no injury rule",
+      "resource response template"
+    ]
+  }
+]

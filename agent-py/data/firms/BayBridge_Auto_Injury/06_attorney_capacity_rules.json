@@ -1,0 +1,37 @@
+{
+  "firm_name": "BayBridge Auto Injury",
+  "capacity_today": {
+    "consult_slots_today": 3,
+    "urgent_slots_today": 1,
+    "max_new_reviews_per_day": 6
+  },
+  "attorneys": [
+    {
+      "name": "Sarah Kim",
+      "focus": "rear-end and simple auto injury",
+      "slots_today": [
+        "3:00 PM",
+        "4:30 PM"
+      ]
+    },
+    {
+      "name": "David Lee",
+      "focus": "rideshare and moderate injury",
+      "slots_today": [
+        "2:00 PM"
+      ]
+    }
+  ],
+  "capacity_rules": [
+    "Accepted consult booking reduces consult_slots_today by 1.",
+    "Auto-referral does not reduce receiving firm capacity until receiving firm accepts or books consult.",
+    "Decline/resource path uses no attorney capacity.",
+    "Urgent slots are reserved for severe injury, commercial vehicle with ER/hospital, minor injury, or catastrophic indicators."
+  ],
+  "demo_statuses": [
+    "available",
+    "urgent_only",
+    "full",
+    "out_of_office"
+  ]
+}

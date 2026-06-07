@@ -1,0 +1,421 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://pirouter.dev/schemas/case_packet.json",
+    "title": "PI Router case packet",
+    "type": "object",
+    "required": [
+      "packet_id",
+      "created_at",
+      "caller",
+      "accident",
+      "injuries",
+      "routing"
+    ],
+    "properties": {
+      "packet_id": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "call_duration_seconds": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "caller": {
+        "type": "object",
+        "required": [
+          "full_name",
+          "phone",
+          "relation_to_victim"
+        ],
+        "properties": {
+          "full_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+?[0-9]{10,15}$"
+          },
+          "dob": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "email": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "email"
+          },
+          "relation_to_victim": {
+            "type": "string",
+            "enum": [
+              "self",
+              "spouse",
+              "parent",
+              "child",
+              "sibling",
+              "friend",
+              "other"
+            ]
+          },
+          "victim_full_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Required when relation_to_victim is not self"
+          },
+          "consent_to_contact": {
+            "type": "boolean",
+            "default": false
+          },
+          "consent_to_record": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "accident": {
+        "type": "object",
+        "required": [
+          "type",
+          "date",
+          "description",
+          "vehicles"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "car",
+              "truck",
+              "motorcycle",
+              "rideshare",
+              "pedestrian_struck",
+              "bicycle_struck",
+              "other_vehicle"
+            ]
+          },
+          "victim_role": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "driver",
+              "passenger",
+              "pedestrian",
+              "cyclist",
+              null
+            ],
+            "description": "What the victim was doing when struck. Affects liability and routing."
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "time": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Approximate time, e.g. 14:30 or 'evening'"
+          },
+          "location": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "e.g. I-880 near Fremont exit"
+              },
+              "city": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "state": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "description": {
+            "type": "string",
+            "description": "What happened, in the caller's own words. Summarized from transcript."
+          },
+          "other_party": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "e.g. semi truck driver, store owner"
+              },
+              "is_commercial": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "description": "Triggers urgent routing when true"
+              },
+              "company_name": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "vehicles": {
+            "type": "object",
+            "description": "Always present. Every case in this product is vehicular.",
+            "properties": {
+              "count": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "commercial_vehicle_involved": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "hit_and_run": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "other_driver_uninsured": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "description": "true, false, or null for unknown"
+              }
+            }
+          }
+        }
+      },
+      "injuries": {
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "hospitalized",
+              "in_treatment",
+              "recovered",
+              "fatal",
+              "unknown"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "What was hurt"
+          },
+          "passengers_injured": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "passenger_details": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "medical": {
+        "type": "object",
+        "properties": {
+          "facility_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Hospital or doctor"
+          },
+          "ambulance_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "treatment_ongoing": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      },
+      "legal": {
+        "type": "object",
+        "properties": {
+          "already_has_attorney": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Disqualifies the lead when true"
+          },
+          "police_report_filed": {
+            "type": "string",
+            "enum": [
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "default": "unknown"
+          },
+          "police_report_number": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "adjuster_contacted_caller": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "gave_recorded_statement": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      },
+      "evidence": {
+        "type": "object",
+        "properties": {
+          "insurance_carrier": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "insurance_policy_number": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "insurance_card_image_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "photo_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            },
+            "default": []
+          },
+          "photo_upload_link_sent": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "routing": {
+        "type": "object",
+        "required": [
+          "subtype",
+          "priority",
+          "assigned_firm",
+          "missing_required_fields"
+        ],
+        "properties": {
+          "subtype": {
+            "type": "string",
+            "description": "e.g. trucking_catastrophic, standard_auto, motorcycle, rideshare, drunk_driver, uninsured_motorist, hit_and_run"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "urgent",
+              "high",
+              "normal",
+              "low",
+              "declined"
+            ]
+          },
+          "assigned_firm": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "decline_reason": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "e.g. not_vehicular, not_pi, already_represented"
+          },
+          "missing_required_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "JSON paths of required fields still empty, e.g. caller.full_name"
+          },
+          "follow_up_tasks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "e.g. send photo upload link, callback for DOB"
+          },
+          "retrieved_rules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Moss document IDs that influenced this routing decision"
+          }
+        }
+      },
+      "transcript_summary": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    }
+  }

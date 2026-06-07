@@ -1,0 +1,38 @@
+{
+  "firm_name": "Vista Auto Justice",
+  "capacity_today": {
+    "consult_slots_today": 4,
+    "urgent_slots_today": 1,
+    "max_new_reviews_per_day": 8
+  },
+  "attorneys": [
+    {
+      "name": "Camila Rivera",
+      "focus": "Spanish-speaking auto injury intake",
+      "slots_today": [
+        "12:30 PM",
+        "3:30 PM"
+      ]
+    },
+    {
+      "name": "Anthony Nguyen",
+      "focus": "SoCal rideshare and moderate injury",
+      "slots_today": [
+        "2:30 PM",
+        "5:30 PM"
+      ]
+    }
+  ],
+  "capacity_rules": [
+    "Accepted consult booking reduces consult_slots_today by 1.",
+    "Auto-referral does not reduce receiving firm capacity until receiving firm accepts or books consult.",
+    "Decline/resource path uses no attorney capacity.",
+    "Urgent slots are reserved for severe injury, commercial vehicle with ER/hospital, minor injury, or catastrophic indicators."
+  ],
+  "demo_statuses": [
+    "available",
+    "urgent_only",
+    "full",
+    "out_of_office"
+  ]
+}

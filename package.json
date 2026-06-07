@@ -13,6 +13,12 @@
     "dev:frontend": "pnpm --dir frontend dev",
     "dev:agent-py": "uv --directory agent-py run src/agent.py dev",
 
+    "status": "bash scripts/status.sh",
+    "stop": "bash scripts/stop.sh",
+    "stop:agent": "bash scripts/stop.sh --agent-only",
+    "restart": "bash scripts/restart.sh",
+    "restart:agent": "bash scripts/restart-agent.sh",
+
     "agent:py:console": "uv --directory agent-py run src/agent.py console",
     "agent:py:start": "uv --directory agent-py run src/agent.py start",
     "agent:py:download-files": "uv --directory agent-py run src/agent.py download-files",

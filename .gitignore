@@ -24,3 +24,7 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+
+# Dev runtime state (logs, marker files)
+.caseflow/
+*.log

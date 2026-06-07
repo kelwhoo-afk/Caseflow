@@ -80,6 +80,35 @@
   --font-mono:
     var(--font-commit-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
+  --font-serif:
+    var(--font-lora), Georgia, 'Times New Roman', serif;
+
+  /* ===== CaseFlow palette ===== */
+  --color-cf-cream: #f5f1e8;
+  --color-cf-cream-2: #efeae0;
+  --color-cf-paper: #ffffff;
+  --color-cf-ink: #1a1715;
+  --color-cf-ink-2: #3a3531;
+  --color-cf-muted: #79736a;
+  --color-cf-muted-2: #a39e94;
+  --color-cf-border: #e6e1d4;
+  --color-cf-border-2: #d8d2c3;
+  --color-cf-sidebar: #0d0d0e;
+  --color-cf-sidebar-hover: #1c1c1f;
+  --color-cf-sidebar-active: #232327;
+  --color-cf-sidebar-text: #c7c4be;
+  --color-cf-blue: #3162d6;
+  --color-cf-blue-2: #2a55ba;
+  --color-cf-blue-soft: #e8efff;
+  --color-cf-blue-ink: #1f4ab0;
+  --color-cf-amber: #b78318;
+  --color-cf-amber-soft: #f4ead3;
+  --color-cf-red: #c64a4a;
+  --color-cf-red-soft: #f6dede;
+  --color-cf-green: #3a8757;
+  --color-cf-green-soft: #d8ecdd;
+  --color-cf-purple: #6e4ec6;
+  --color-cf-purple-soft: #e6dcfb;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
